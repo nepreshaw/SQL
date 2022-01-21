@@ -165,6 +165,24 @@
 --FROM Departments LEFT JOIN Employees
 --	ON Departments.DeptNo = Employees.DeptNo
 
+--SELECT DeptName, Employees.DeptNo, LastName
+--FROM Departments RIGHT JOIN Employees		
+--	ON Departments.DeptNo = Employees.DeptNo
+
+--SELECT DeptName, Departments.DeptNo, Employees.DeptNo
+--	FROM Departments FULL JOIN Employees
+
+--SELECT DeptName, LastName, ProjectNo
+--	FROM Departments LEFT JOIN Employees
+--		ON Departments.DeptNo = Employees.DeptNo
+--	LEFT JOIN Projects
+--		ON Employees.EmployeeID = Projects.EmployeeID
+--	ORDER BY DeptName, LastName, ProjectNo
+
+
+
+
+
 
 
 
