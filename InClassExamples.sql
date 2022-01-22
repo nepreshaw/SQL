@@ -179,7 +179,40 @@
 --		ON Employees.EmployeeID = Projects.EmployeeID
 --	ORDER BY DeptName, LastName, ProjectNo
 
+--SELECT Departments.DeptNo, DeptName, EmployeeID, LastName
+--FROM Departments CROSS JOIN Employees
+--ORDER BY Departments.DeptNo
 
+--Chapter 5
+
+--SELECT COUNT(*) AS NumberOfInvoices,
+--	SUM(InvoiceTotal - PaymentTotal - CreditTotal)
+--	AS TotalDue
+--	FROM Invoices
+--	WHERE InvoiceTotal - PaymentTotal - CreditTotal > 0
+
+--SELECT 'After 7/1/2019' AS SelectionDate, Count(*) AS NumberOfInvoices,
+--	AVG(InvoiceTotal) AS AverageInvoiceAmount,
+--	SUM(InvoiceTotal) AS TotalInvoiceAmount
+--FROM Invoices
+--WHERE InvoiceDate > '2019-07-01'
+
+--SELECT VendorState, VendorCity, COUNT(*) AS InvoiceQty, AVG(InvoiceTotal) AS InvoiceAvg
+--FROM Invoices JOIN Vendors ON Invoices.VendorID = Vendors.VendorID
+--GROUP BY VendorState, VendorCity
+--Order BY VendorState, VendorCity
+
+--SELECT VendorState, VendorCity, COUNT(*) AS QtyVendors
+--FROM Vendors
+--WHERE VendorSTATE IN ('IA', 'NJ')
+--GROUP BY GROUPING SETS(VendorState, VendorCity)
+--ORDER BY VendorState DESC, VendorCity DESC
+
+--SELECT InvoiceNumber, InvoiceDate, InvoiceTotal,
+--	SUM(InvoiceTotal) OVER (PARTITION BY InvoiceDate) AS DateTotal,
+--	COUNT(InvoiceTotal) OVER (PARTITION BY InvoiceDate) AS DateCount,
+--	AVG(InvoiceTotal) OVER (PARTITION BY InvoiceDate) AS DateAvg
+--FROM Invoices
 
 
 
