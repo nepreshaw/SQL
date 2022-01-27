@@ -77,7 +77,11 @@ ON (Vendors1.VendorID <> Vendors2.VendorID) AND
 ORDER BY Name
 
 --Chapter 4 Exercise 7
---Write a SELECT statement that returns two columns from the GLAccounts table: AccountNo and AccountDescription. --The result set should have one row for each account number that has never been used. --Sort the final result set by AccountNo.--Hint: Use an outer join to the InvoiceLineItems table.
+--Write a SELECT statement that returns two columns from the GLAccounts table: AccountNo and AccountDescription. 
+--The result set should have one row for each account number that has never been used. 
+--Sort the final result set by AccountNo.
+--Hint: Use an outer join to the InvoiceLineItems table.
+
 SELECT  GLAccounts.AccountNo, AccountDescription
 FROM GLAccounts LEFT JOIN InvoiceLineItems
 	ON GLAccounts.AccountNo = InvoiceLineItems.AccountNo
@@ -85,7 +89,11 @@ WHERE InvoiceLineItems.AccountNo is NULL
 ORDER BY GLAccounts.AccountNo
 
 --Chapter 4 Exercise 8
---Use the UNION operator to generate a result set consisting of two columns from the Vendors table: --VendorName and VendorState.--If the vendor is in California, the VendorState value should be “CA”; --otherwise, the VendorState value should be “Outside CA.” Sort the final result set by VendorName.
+--Use the UNION operator to generate a result set consisting of two columns from the Vendors table: 
+--VendorName and VendorState.
+--If the vendor is in California, the VendorState value should be “CA”; 
+--otherwise, the VendorState value should be “Outside CA.” Sort the final result set by VendorName.
+
 SELECT VendorName, VendorState
 FROM Vendors
 WHERE VendorState = 'CA'
